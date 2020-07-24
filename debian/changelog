@@ -1,3 +1,9 @@
+ros-noetic-image-to-v4l2loopback (0.0.2-1) unstable; urgency=medium
+
+  * Fix installation.
+
+ -- Pedro Aguiar <pedro.aguiar@squadrone-system.com>  Fri, 24 Jul 2020 16:19:35 +0200
+
 ros-noetic-image-to-v4l2loopback (0.0.1-1) unstable; urgency=medium
 
   * Initial release.
