@@ -65,7 +65,7 @@ target_link_libraries(stream
 #############
 ## Install ##
 #############
-install(PROGRAMS
+install(TARGETS stream
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
@@ -73,31 +73,31 @@ install(PROGRAMS
 ## Test ##
 ##########
 
-if(CATKIN_ENABLE_TESTING)
-  catkin_download_test_data(
-    ${PROJECT_NAME}_sim-cam_2015-02-19-11-42-28.bag
-    https://s3-us-west-1.amazonaws.com/ai-mf-data/sim-cam_2015-02-19-11-42-28.bag
-    DESTINATION /tmp/${PROJECT_NAME}
-    FILENAME sim-cam_2015-02-19-11-42-28.bag
-    MD5 6927504331cd17d2ff8e9c498d0bf0ff
-  )
-
-  find_package(rostest REQUIRED)
-  foreach(T
-    tests/stream-test.launch
-    )
-    add_rostest(${T})
-  endforeach()
-
-  include_directories(src)
-  catkin_add_gtest(unit_test
-      tests/unit_test.cpp
-      src/image_converter.cpp
-      src/video_device.cpp
-  )
-  target_link_libraries(unit_test ${catkin_LIBRARIES})
-  target_link_libraries(stream
-      ${catkin_LIBRARIES}
-      ${OpenCV_LIBRARIES}
-  )
-endif()
+#if(CATKIN_ENABLE_TESTING)
+#  catkin_download_test_data(
+#    ${PROJECT_NAME}_sim-cam_2015-02-19-11-42-28.bag
+#    https://s3-us-west-1.amazonaws.com/ai-mf-data/sim-cam_2015-02-19-11-42-28.bag
+#    DESTINATION /tmp/${PROJECT_NAME}
+#    FILENAME sim-cam_2015-02-19-11-42-28.bag
+#    MD5 6927504331cd17d2ff8e9c498d0bf0ff
+#  )
+#
+#  find_package(rostest REQUIRED)
+#  foreach(T
+#    tests/stream-test.launch
+#    )
+#    add_rostest(${T})
+#  endforeach()
+#
+#  include_directories(src)
+#  catkin_add_gtest(unit_test
+#      tests/unit_test.cpp
+#      src/image_converter.cpp
+#      src/video_device.cpp
+#  )
+#  target_link_libraries(unit_test ${catkin_LIBRARIES})
+#  target_link_libraries(stream
+#      ${catkin_LIBRARIES}
+#      ${OpenCV_LIBRARIES}
+#  )
+#endif()

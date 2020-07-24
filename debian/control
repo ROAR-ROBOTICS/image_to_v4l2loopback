@@ -1,0 +1,12 @@
+Source: ros-noetic-image-to-v4l2loopback
+Section: misc
+Priority: optional
+Maintainer: Pedro Aguiar <pedro.aguiar@squadrone-system.com>
+Build-Depends: debhelper (>= 9.0.0), ros-noetic-catkin, ros-noetic-roscpp, ros-noetic-roslint, ros-noetic-cv-bridge, ros-noetic-image-transport
+Standards-Version: 4.1.2
+
+Package: ros-noetic-image-to-v4l2loopback
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-noetic-message-runtime, ros-noetic-roscpp, ros-noetic-std-msgs
+Description: Squadrone System's simulators Gazebo plugins
+
